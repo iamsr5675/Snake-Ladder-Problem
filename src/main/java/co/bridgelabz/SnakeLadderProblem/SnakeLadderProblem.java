@@ -17,11 +17,13 @@ public class SnakeLadderProblem
         switch(option)
         {
         case 0:
-        	playerPosition = playerPosition;
         	System.out.println("NO PLAY\n Player's current position: " +playerPosition);
         	break;
         case 1:
-        	playerPosition = playerPosition + diceNumber;
+        	if(playerPosition + diceNumber <= FINAL_POSITION)
+        	{
+        		playerPosition =  playerPosition + diceNumber;
+        	}
         	System.out.println("Ladder\n Player's current position: " +playerPosition);
         	break;
         case 2:
@@ -42,7 +44,6 @@ public class SnakeLadderProblem
     {
         System.out.println( "Welcome to SNAKE AND LADDER GAME" );
         System.out.println("Game starts at Player Position: " +INITIAL_POSITION);
-        int playerPosition = INITIAL_POSITION; 
         SnakeLadderProblem ob = new SnakeLadderProblem();
         int updatedPosition = ob.checkOption(INITIAL_POSITION);
         while(updatedPosition != FINAL_POSITION)
