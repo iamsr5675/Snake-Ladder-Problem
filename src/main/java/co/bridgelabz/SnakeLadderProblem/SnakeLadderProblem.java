@@ -6,6 +6,7 @@ public class SnakeLadderProblem
 	static int INITIAL_POSITION = 0;
 	static int FINAL_POSITION = 100;
 	int numberOfPlayer = 1;
+	static int counter = 1;
 	
 	
 	int checkOption(int playerPosition)
@@ -49,6 +50,8 @@ public class SnakeLadderProblem
         while(updatedPosition != FINAL_POSITION)
         {
         	updatedPosition = ob.checkOption(updatedPosition);
+        	counter++;
         }
+        System.out.println("Number of times the Dice was rolled to win the game: " +counter);
     }
 }
