@@ -4,9 +4,11 @@ package co.bridgelabz.SnakeLadderProblem;
 public class SnakeLadderProblem 
 {
 	static int INITIAL_POSITION = 0;
+	static int FINAL_POSITION = 100;
 	int numberOfPlayer = 1;
 	
-	void checkOption(int playerPosition)
+	
+	int checkOption(int playerPosition)
 	{
 		int diceNumber, option;
         diceNumber = (int)(Math.random()*6+1);
@@ -23,17 +25,29 @@ public class SnakeLadderProblem
         	System.out.println("Ladder\n Player's current position: " +playerPosition);
         	break;
         case 2:
-        	playerPosition = playerPosition - diceNumber;
+        	if(playerPosition - diceNumber <= 0)
+        	{
+        		playerPosition = 0;
+        	}
+        	else
+        	{
+        		playerPosition = playerPosition - diceNumber;
+        	}
         	System.out.println("Snake\n Player's current position: " +playerPosition);
         	break;
         }
+        return playerPosition;
 	}
     public static void main( String[] args )
     {
         System.out.println( "Welcome to SNAKE AND LADDER GAME" );
         System.out.println("Game starts at Player Position: " +INITIAL_POSITION);
-        int playerPosition = INITIAL_POSITION;
+        int playerPosition = INITIAL_POSITION; 
         SnakeLadderProblem ob = new SnakeLadderProblem();
-        ob.checkOption(playerPosition);
+        int updatedPosition = ob.checkOption(INITIAL_POSITION);
+        while(updatedPosition != FINAL_POSITION)
+        {
+        	updatedPosition = ob.checkOption(updatedPosition);
+        }
     }
 }
