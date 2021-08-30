@@ -15,7 +15,7 @@ public class SnakeLadderProblem
 		int diceNumber, option;
 		SnakeLadderProblem obj = new SnakeLadderProblem();
         diceNumber = (int)(Math.random()*6+1);
-        System.out .println("Dice throw: " +diceNumber);
+        System.out.println("Dice throw: " +diceNumber);
         option = (int)(Math.random()*3);
         switch(option)
         {
@@ -59,7 +59,7 @@ public class SnakeLadderProblem
         System.out.println("\n_________________________________________\n");
         System.out.println("Game starts at Player Position: " +INITIAL_POSITION);
         SnakeLadderProblem ob = new SnakeLadderProblem();
-        int updatedPosition1 = ob.checkOption(INITIAL_POSITION, "Player1");
+        int updatedPosition1 = 0;//ob.checkOption(INITIAL_POSITION, "Player1");
         int updatedPosition2 = 0;
         while(updatedPosition1 != FINAL_POSITION && updatedPosition2 != FINAL_POSITION)
         {
